@@ -1,1 +1,1 @@
-import("https://raw.githubusercontent.com/RapidCodeLab/ad-provider.js/main/src/provider.js")
+import("https://cdn.jsdelivr.net/gh/RapidCodeLab/ad-provider.js@main/src/provider.js")
