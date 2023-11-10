@@ -1,2 +1,1 @@
-
-import("https://github.com/RapidCodeLab/ad-provider.js/blob/main/src/provider.js")
+import("https://raw.githubusercontent.com/RapidCodeLab/ad-provider.js/main/src/provider.js")

@@ -6,6 +6,55 @@
     <title>Ad Demo Page - RapidPrebidServer - s2s header bidding</title>
 
     <style>
+          body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .ad-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .ad {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #f5f5f5;
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 200px;
+            min-height: 150px;
+            text-align: center;
+        }
+
+        .banner-ad {
+            height: 200px;
+            background: lightblue;
+        }
+
+        .video-ad {
+            height: 250px;
+            background: lightgreen;
+            margin-top: 20px;
+        }
+
+        .audio-ad {
+            height: 100px;
+            background: lightyellow;
+            margin-top: 20px;
+        }
         .native-ad {
           display: inline-block;
           width: 300px;
@@ -52,6 +101,36 @@
         
             <h2>native</h2>
             <div data-entity-id="40dc031a-5cf9-4d26-b72f-ebcf01c46c26"></div> 
+
+             <div class="ad-container">
+        <div class="ad banner-ad">
+            <h3>Banner Ad</h3>
+        </div>
+      
+        <div class="ad">
+            <h3>Native Ad 1</h3>
+        </div>
+
+        <div class="ad">
+            <h3>Native Ad 2</h3>
+        </div>
+
+        <div class="ad">
+            <h3>Native Ad 3</h3>
+        </div>
+
+        <div class="ad">
+            <h3>Native Ad 4</h3>
+        </div>
+
+        <div class="ad video-ad">
+            <h3>Video Ad</h3>
+        </div>
+
+        <div class="ad audio-ad">
+            <h3>Audio Ad</h3>
+        </div>
+    </div>
         
             <script src="demo.js"></script>
         </body>
