@@ -21,8 +21,10 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            background-color:#ccc;
+            padding:5px;
             gap: 20px;
-            max-width: 800px;
+            max-width: 90%;
             width: 100%;
         }
 
@@ -34,9 +36,46 @@
             background: #f5f5f5;
             border: 1px solid #ccc;
             padding: 10px;
-            width: 200px;
+            width: 220px;
             min-height: 150px;
+            height:auto;
             text-align: center;
+        }
+        .ad-container-header{
+          flex: 0 0 100%;
+          font-size:15px;
+          border-bottom:1px solid #000;
+          padding:5px;
+        }
+        .ad-container-header > h2{
+          font-size:15px;
+          padding:0.3em;
+          margin:0.3em;
+        }
+        .ad > a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .ad > a:hover {
+            text-decoration: underline;
+        }
+
+        .ad > a > div > img {
+          width: 100%;
+          height: auto;
+        }
+
+        .ad > a > h3 {
+          font-size: 0.9em;
+          margin: 0;
+          padding: 0;
+        }
+
+        .ad > a > p {
+          font-size: 0.7em;;
+          margin: 5px 0 0;
+          padding: 0;
         }
 
         .banner-ad {
@@ -55,42 +94,6 @@
             background: lightyellow;
             margin-top: 20px;
         }
-        .native-ad {
-          display: inline-block;
-          width: 300px;
-          border: 1px solid #ccc;
-          padding: 10px;
-          text-align:center;
-        }
-        
-        .native-ad-link {
-          text-decoration: none;
-          color: #000;
-        }
-        
-        .native-ad-link:hover {
-          text-decoration: underline;
-        }
-        
-        .native-ad-image img {
-          max-width: 100%;
-          height: auto;
-        }
-        
-        .native-ad-title {
-          font-size: 18px;
-          margin: 0;
-          padding: 0;
-        }
-        
-        .native-ad-description {
-          font-size: 14px;
-          margin: 5px 0 0;
-          padding: 0;
-        }
-                .banners > a >img {
-                    margin: 5px;
-                }
             </style>
         </head>
         <body>
@@ -99,38 +102,15 @@
             <h2>banner</h2>
             <div data-entity-id="40dc031a-5cf9-4d26-b72f-ebcf01c46c23"></div>
         
-            <h2>native</h2>
-            <div data-entity-id="40dc031a-5cf9-4d26-b72f-ebcf01c46c26"></div> 
 
-             <div class="ad-container">
-        <div class="ad banner-ad">
-            <h3>Banner Ad</h3>
-        </div>
       
-        <div class="ad">
-            <h3>Native Ad 1</h3>
-        </div>
 
-        <div class="ad">
-            <h3>Native Ad 2</h3>
-        </div>
+        <div class="ad-container" data-entity-id="40dc031a-5cf9-4d26-b72f-ebcf01c46c26">
+          <div class="ad-container-header">
+          <h2>Recomendation Widget: </h2>
+          </div>
+        </div> 
 
-        <div class="ad">
-            <h3>Native Ad 3</h3>
-        </div>
-
-        <div class="ad">
-            <h3>Native Ad 4</h3>
-        </div>
-
-        <div class="ad video-ad">
-            <h3>Video Ad</h3>
-        </div>
-
-        <div class="ad audio-ad">
-            <h3>Audio Ad</h3>
-        </div>
-    </div>
         
             <script type="text/javascript" src="demo.js"></script>
         </body>
