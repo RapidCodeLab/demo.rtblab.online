@@ -22,7 +22,7 @@
             flex-wrap: wrap;
             justify-content: center;
             background-color:#ccc;
-            padding:5px;
+            padding:0px 5px;
             gap: 20px;
             max-width: 90%;
             width: 100%;
@@ -43,14 +43,19 @@
         }
         .ad-container-header{
           flex: 0 0 100%;
-          font-size:15px;
+          font-size:1em;
           border-bottom:1px solid #000;
-          padding:5px;
+          background-color:#000;
+          color: #fff;
+          padding:10px 5px;
         }
         .ad-container-header > h2{
-          font-size:15px;
-          padding:0.3em;
+          display:inline;
           margin:0.3em;
+        }
+        .ad-container-header > span{
+          display:inline;
+          float:right;
         }
         .ad > a {
             text-decoration: none;
@@ -108,6 +113,7 @@
         <div class="ad-container" data-entity-id="40dc031a-5cf9-4d26-b72f-ebcf01c46c26">
           <div class="ad-container-header">
           <h2>Recomendation Widget: </h2>
+          <span>Sponsored By: <a href="" target="_blank">PrebidLab</a></span>
           </div>
         </div> 
 
