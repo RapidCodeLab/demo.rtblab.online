@@ -11,12 +11,24 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 100vh;
             margin: 0;
             padding: 20px;
-            font-family: Arial, sans-serif;
+            font: small-caps 400 17px monospace;
         }
 
+        header{
+          font-size:1.4em;
+        }
+        article{
+          max-width:900px; 
+          text-align:center;
+        }
+        h5{
+          color:red;
+        }
+        cite{
+          color: green;
+        }
         .ad-container {
             display: flex;
             flex-wrap: wrap;
@@ -26,6 +38,7 @@
             gap: 20px;
             max-width: 90%;
             width: 100%;
+            font: 12px courier;
         }
 
         .ad {
@@ -103,14 +116,34 @@
             </style>
         </head>
         <body>
-        
-            <header>Ad Demo Page</header>
-            <h2>banner</h2>
+            <span>Contact us via <a href="https://t.me/RapidCodeLab" target="_blank"/>Telegram</a> and <a href="https://discord.gg/nKdsZZGV" target="_blank"/>Discord</a></span> 
+            <header>RapidPrebidServer - S2S Header Bidding - Ad Demo Page</header>
+            <span><a href="https://github.com/RapidCodeLab/rapid-prebid-server" target="_blank"/>RapidPrebidServer on GitHub</a></span>
+            
+            <h3>Hey! What's going on here!?</h3>
+            <article>
+              On this page, we demonstrate how <a href="https://github.com/RapidCodeLab/rapid-prebid-server"/>RapidPrebidServer</a> works.<br/><br /> 
+              <img src="images/header-bidding-demo.jpg" alt="RapidPrebidServer - s2s header bidding"/><br/>
+              From left to right on image: <br/><br/>
+
+              The web page contains ad placements aka Ad Entity. Entity looks like simple <cite>div</cite> element with attribute <cite>data-entity-id</cite> that contains Ad Entity id inside <a href="https://github.com/RapidCodeLab/rapid-prebid-server"/>RapidPrebidServer</a>.
+              <br/>
+              <br/>
+              When the page loads and the DOM is ready, the <a href="https://github.com/RapidCodeLab/ad-provider.js"/>ad-provider.js</a> will find all the ad placements on the page and collect their ids into one array. After that, the script sends an  <cite>http POST request</cite> with the collected IDs of ad objects to the <a href="https://github.com/RapidCodeLab/rapid-prebid-server"/>RapidPrebidServer</a>.
+
+            </article>
+
+
+
+
+            <h5>AdEntity #1: one banner 728x90</h5>
             <div data-entity-id="40dc031a-5cf9-4d26-b72f-ebcf01c46c23"></div>
         
 
       
 
+
+            <h5>AdEntity #2: six native objects</h5>
         <div class="ad-container" data-entity-id="40dc031a-5cf9-4d26-b72f-ebcf01c46c26">
           <div class="ad-container-header">
           <h2>Recomendation Widget: </h2>
@@ -119,7 +152,11 @@
         </div> 
 
         
-            <script type="text/javascript" src="demo.js"></script>
+            <h5>AdEntity #3: one banner 728x90</h5>
+            <div data-entity-id="40dc031a-5cf9-4d26-b72f-ebcf01c46c27"></div>
+            <br/><br/>
+            <span>Contact us via <a href="https://t.me/RapidCodeLab" target="_blank"/>Telegram</a> and <a href="https://discord.gg/nKdsZZGV" target="_blank"/>Discord</a></span> 
+            <script type="text/javascript" src="demo.js"/></script>
         </body>
 
     
