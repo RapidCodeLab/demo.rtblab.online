@@ -23,7 +23,7 @@
           max-width:900px; 
           text-align:center;
         }
-        h5{
+        h5, .red{
           color:red;
         }
         cite{
@@ -126,15 +126,19 @@
               <img src="images/header-bidding-demo.jpg" alt="RapidPrebidServer - s2s header bidding"/><br/>
               From left to right on image: <br/><br/>
 
-              The web page contains ad placements aka Ad Entity. Entity looks like simple <cite>div</cite> element with attribute <cite>data-entity-id</cite> that contains Ad Entity id inside <a href="https://github.com/RapidCodeLab/rapid-prebid-server"/>RapidPrebidServer</a>.
-              <br/>
-              <br/>
+              <p> The web page contains ad placements aka Ad Entity. Entity looks like simple <cite>div</cite> element with attribute <cite>data-entity-id</cite> that contains Ad Entity id inside <a href="https://github.com/RapidCodeLab/rapid-prebid-server"/>RapidPrebidServer</a>.
+              </p>
+              <p>
               When the page loads and the DOM is ready, the <a href="https://github.com/RapidCodeLab/ad-provider.js"/>ad-provider.js</a> will find all the ad placements on the page and collect their ids into one array. After that, the script sends an  <cite>http POST request</cite> with the collected IDs of ad objects to the <a href="https://github.com/RapidCodeLab/rapid-prebid-server"/>RapidPrebidServer</a>.
-
+              </p>
+              <p>The <a href="https://github.com/RapidCodeLab/rapid-prebid-server"/>RapidPrebidServer</a> receives a request from the <a href="https://github.com/RapidCodeLab/ad-provider.js"/>ad-provider.js</a>, creates a <cite>OpenRTB BidRequest</cite> object containing <cite>Imp</cite> objects for each ad object from the request. The RapidPrebidServer sends a <cite>OpenRTB BidRequest</cite> to all connected <cite>DSPs</cite> simultaneously via the OpenRTB protocol. After receiving a <cite>OpenRTB BidResonse</cite> from all <cite>DSPs</cite>, the server conducts an auction for each Ad Entity. The winner creatives are sent back to the <cite>ad-provider.js</cite>. The ad-provider.js displays creatives on the page.</p>
+              <p>For servicing <cite>all ad places</cite> on page, we include <i class="red">only one js-script and provide only one http request</i> to RapidPrebidServer. It dramatically decreases page load times, opposite classic way, when for each ad place includes one js scripts and make one request.
+              </p>
             </article>
 
 
 
+            <h3>The following ad places served by two demo <a href="https://github.com/RapidCodeLab/FakeDSP"/>fake DSPs</a></h3>
 
             <h5>AdEntity #1: one banner 728x90</h5>
             <div data-entity-id="40dc031a-5cf9-4d26-b72f-ebcf01c46c23"></div>
