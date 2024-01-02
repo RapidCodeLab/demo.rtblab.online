@@ -4,141 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ad Demo Page - RapidPrebidServer - s2s header bidding</title>
-
-    <style>
-          body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin: 0;
-            padding: 20px;
-            font: small-caps 400 17px monospace;
-        }
-
-        header{
-          font-size:1.4em;
-        }
-        article{
-          max-width:900px; 
-          text-align:center;
-        }
-        h5, .red{
-          color:red;
-        }
-        cite{
-          color: green;
-        }
-        .ad-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            background-color:#ccc;
-            padding:0px 5px;
-            gap: 20px;
-            max-width: 90%;
-            width: 100%;
-            font: 12px courier;
-        }
-
-        .ad {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: #f5f5f5;
-            border: 1px solid #ccc;
-            padding: 10px;
-            width: 220px;
-            min-height: 150px;
-            height:auto;
-            text-align: center;
-        }
-        .ad-container-header{
-          flex: 0 0 100%;
-          font-size:1em;
-          border-bottom:1px solid #000;
-          background-color:#000;
-          color: #fff;
-          padding:10px 5px;
-        }
-        .ad-container-header > h2{
-          display:inline;
-          margin:0.3em;
-        }
-        .ad-container-header > span{
-          display:inline;
-          float:right;
-        }
-        .ad > a {
-            text-decoration: none;
-            color: #000;
-        }
-
-        .ad > a:hover {
-            text-decoration: underline;
-        }
-
-        .ad > a > div > img {
-          width: 100%;
-          height: 220px;
-          object-fit:cover;
-        }
-
-        .ad > a > h3 {
-          font-size: 0.9em;
-          margin: 0;
-          padding: 0;
-        }
-
-        .ad > a > p {
-          font-size: 0.7em;;
-          margin: 5px 0 0;
-          padding: 0;
-        }
-
-        .banner-ad {
-            height: 200px;
-            background: lightblue;
-        }
-
-        .video-ad {
-            height: 250px;
-            background: lightgreen;
-            margin-top: 20px;
-        }
-
-        .audio-ad {
-            height: 100px;
-            background: lightyellow;
-            margin-top: 20px;
-        }
-            </style>
-        </head>
-        <body>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+        
             <span>Contact us via <a href="https://t.me/RapidCodeLab" target="_blank"/>Telegram</a> and <a href="https://discord.gg/nKdsZZGV" target="_blank"/>Discord</a></span> 
             <header>RapidPrebidServer - S2S Header Bidding - Ad Demo Page</header>
             <span><a href="https://github.com/RapidCodeLab/rapid-prebid-server" target="_blank"/>RapidPrebidServer on GitHub</a></span>
             
             <h3>Hey! What's going on here!?</h3>
             <article>
-              On this page, we demonstrate how <a href="https://github.com/RapidCodeLab/rapid-prebid-server"/>RapidPrebidServer</a> works.<br/><br /> 
+              This page is a demonstration of how <a href="https://github.com/RapidCodeLab/rapid-prebid-server"/>RapidPrebidServer</a> works.
+              <br/>
+              <br/>
               <img src="images/header-bidding-demo.jpg" alt="RapidPrebidServer - s2s header bidding"/><br/>
-              From left to right on image: <br/><br/>
+              From left to right on the image: <br/><br/>
 
-              <p> The web page contains ad placements aka Ad Entity. Entity looks like simple <cite>div</cite> element with attribute <cite>data-entity-id</cite> that contains Ad Entity id inside <a href="https://github.com/RapidCodeLab/rapid-prebid-server"/>RapidPrebidServer</a>.
+              <p>The webpage has ad placements known as Ad Entities. These entities appear as simple <cite>div</cite> elements with a <cite>data-entity-id</cite> attribute that includes the Ad Entity ID within the <a href="https://github.com/RapidCodeLab/rapid-prebid-server"/>RapidPrebidServer</a>.
               </p>
+              <p>Once the page has loaded and the DOM is ready, the <a href="https://github.com/RapidCodeLab/ad-provider.js"/>ad-provider.js</a> script searches for all the ad placements present on the page and gathers their respective IDs into a singular array. After this step, the script sends an <cite>HTTP POST request</cite> with the collected IDs of ad objects to the <a href="https://github.com/RapidCodeLab/rapid-prebid-server"/>RapidPrebidServer</a>.
+              </p>
+
               <p>
-              When the page loads and the DOM is ready, the <a href="https://github.com/RapidCodeLab/ad-provider.js"/>ad-provider.js</a> will find all the ad placements on the page and collect their ids into one array. After that, the script sends an  <cite>http POST request</cite> with the collected IDs of ad objects to the <a href="https://github.com/RapidCodeLab/rapid-prebid-server"/>RapidPrebidServer</a>.
+              The <a href="https://github.com/RapidCodeLab/rapid-prebid-server"/>RapidPrebidServer</a> receives a request from <a href="https://github.com/RapidCodeLab/ad-provider.js"/>ad-provider.js</a> and creates an <cite>OpenRTB BidRequest</cite> object with <cite>Imp</cite> objects for each ad from the request. It then sends this request to all connected DSPs simultaneously via the <cite>OpenRTB</cite> protocol. After receiving all <cite>OpenRTB BidResponses</cite>, the server conducts an auction for each Ad Entity. The winning creatives are sent back to <cite>ad-provider.js</cite>, which then displays them on the page.
               </p>
-              <p>The <a href="https://github.com/RapidCodeLab/rapid-prebid-server"/>RapidPrebidServer</a> receives a request from the <a href="https://github.com/RapidCodeLab/ad-provider.js"/>ad-provider.js</a>, creates a <cite>OpenRTB BidRequest</cite> object containing <cite>Imp</cite> objects for each ad object from the request. The RapidPrebidServer sends a <cite>OpenRTB BidRequest</cite> to all connected <cite>DSPs</cite> simultaneously via the OpenRTB protocol. After receiving a <cite>OpenRTB BidResonse</cite> from all <cite>DSPs</cite>, the server conducts an auction for each Ad Entity. The winner creatives are sent back to the <cite>ad-provider.js</cite>. The ad-provider.js displays creatives on the page.</p>
-              <p>For servicing <cite>all ad places</cite> on page, we include <i class="red">only one js-script and provide only one http request</i> to RapidPrebidServer. It dramatically decreases page load times, opposite classic way, when for each ad place includes one js scripts and make one request.
+
+              <p>
+              To optimize page load times, we use a <i class="red">single JS script and HTTP request</i> to RapidPrebidServer to serve <cite>all ad places</cite> on the page. This is in contrast to the classic method of using a separate JS script and request for each ad place.
               </p>
             </article>
 
 
 
-            <h3>The following ad places served by two demo <a href="https://github.com/RapidCodeLab/FakeDSP"/>fake DSPs</a></h3>
+            <h3>The two <a href="https://github.com/RapidCodeLab/FakeDSP"/>demo fake DSPs</a> are responsible for serving the following ad places.</h3>
 
             <h5>AdEntity #1: one banner 728x90</h5>
             <div data-entity-id="40dc031a-5cf9-4d26-b72f-ebcf01c46c23"></div>
